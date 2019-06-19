@@ -1,0 +1,82 @@
+
+.sign-out{
+    float:right;
+    top: 10px;
+
+    padding: 2px;
+    right: 10px;
+   
+}
+body{
+    background-image: url('../images/fantasy_background_1.jpg');
+    background-size: cover;
+    box-sizing: border-box;
+}
+#sign-in-wrapper{
+    padding:5px 0px;;
+    
+    display:block;
+}
+#form-wrapper{
+    padding: 5px 5px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    
+}
+#app-wrapper{
+    display:none;
+    text-align: center;
+}
+#welcome-banner{
+    padding:3px;
+    margin:10px;
+    border: 1px solid green;
+    border-radius: 2px;
+    font-weight: bold;
+    font-style: oblique;
+}
+#char-view{
+    
+    max-width: 30.333%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 10px;
+   padding:10px 2%;
+   border: 2px solid blue;
+   border-radius: 2px;
+   font-size: 20px;
+}
+#char-create{
+      
+    max-width: 30.333%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 10px;
+   padding:10px 2%;
+   border: 2px solid blue;
+   border-radius: 2px;
+   font-size: 20px;
+}
+#dice{
+    max-width: 30.333%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 10px;
+   padding:10px 2%;
+   border: 2px solid blue;
+   border-radius: 2px;
+   font-size: 20px;
+   color:black;
+   text-decoration: none;
+
+}
+#center{
+    max-width: 100%;
+    padding:10px;
+    margin: 0 auto;
+    text-align: center;
+}
+#char-create, #dice, #char-view, .sign-out :hover{
+    cursor: pointer;
+
+}
