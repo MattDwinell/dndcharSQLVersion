@@ -1,6 +1,6 @@
 //character constructor
-const CharConst = function(str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment, charBackground,charPersonality, charInventory){
-    this.userEmail = 'test@gmail.com';
+const CharConst = function(userEmail, str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment, charBackground,charPersonality, charInventory){
+    this.userEmail = userEmail;
     this.str= str;
     this.dex= dex;
     this.con = con;
@@ -43,15 +43,18 @@ function makeChar(){
     var charBackground = $("#char-background").val();
     var charPersonality = $("#char-personality").val();
     var charInventory = $("#char-inventory").val();
+    var userEmail = $("#userEmail").text();
     // dex, con, int, wis, cha, ac, spd, hp, init, charName, charLevel (add to if statement when done testing)
     if(str){
+        console.log(userEmail);
     
-    var tempChar = new CharConst(str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment,charBackground,charPersonality,charInventory);
+    var tempChar = new CharConst(userEmail, str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment,charBackground,charPersonality,charInventory);
     console.log(tempChar);
     $.post('/api/characters', tempChar, (data, status)=>{
         console.log(status);
         console.log('data from post: ');
-        console.log( data);
+        console.log(data);
+        console.log( data.charName);
 
     })
 

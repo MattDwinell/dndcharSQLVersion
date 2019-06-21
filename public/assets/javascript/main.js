@@ -68,6 +68,8 @@ $(document).ready(function () {
             $("#welcome-banner").text("Welcome to the Character Creator, " + user.email + "!");
             $(".welcome").text("Welcome to the Dice Roller, " + user.email);
             $(".welcome-maker").text("Forge a new character, " + user.email);
+            $("#userEmail").text(user.email);
+    
 
             console.log(user, user.email);
             $("#sign-in-wrapper").css("display", "none");

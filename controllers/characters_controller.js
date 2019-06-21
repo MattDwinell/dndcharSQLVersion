@@ -12,7 +12,7 @@ app.post("/api/characters", (req,res)=>{
     console.log(character);
     console.log(character.name);
 Characters.create({
-    userEmail: 'testemail@gmail.com',
+    userEmail: character.userEmail,
     charName: character.name,
     strength: character.str,
     dexterity: character.dex,
