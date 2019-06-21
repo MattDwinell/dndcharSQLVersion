@@ -10,12 +10,12 @@ module.exports = function(app) {
   });
 
   // Route to the cms page
-  app.get("/dice", function(req, res) {
+  app.get("/assets/html/dice", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/assets/html/dice.html"));
   });
 
-  app.get("/maker", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/assets/html/maker"));
+  app.get("/assets/html/maker", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/assets/html/maker.html"));
   });
 
 };
