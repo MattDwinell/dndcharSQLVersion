@@ -50,7 +50,8 @@ function makeChar(){
     console.log(tempChar);
     $.post('/api/characters', tempChar, (data, status)=>{
         console.log(status);
-        console.log('data from post: ' + data);
+        console.log('data from post: ');
+        console.log( data);
 
     })
 

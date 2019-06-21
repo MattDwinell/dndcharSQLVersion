@@ -7,11 +7,13 @@ module.exports = function(app){
         })
     })
 app.post("/api/characters", (req,res)=>{
-    console.log(JSON.stringify(req.body));
+    console.log('this is what is sent to the post request' +JSON.stringify(req.body));
     let character = req.body;
+    console.log(character);
+    console.log(character.name);
 Characters.create({
     userEmail: 'testemail@gmail.com',
-    charName: character.charName,
+    charName: character.name,
     strength: character.str,
     dexterity: character.dex,
     constitution: character.con,
@@ -22,13 +24,16 @@ Characters.create({
     speed: character.spd,
     hitpoints: character.hp,
     initiative: character.init,
-    charClass: character.charClass,
-    charLevel: character.charLevel,
-    charAlignment: character.charAlignment,
-    charBackground: character.charBackground,
-    charPersonality: character.charPersonality,
-    charInventory: character.charInventory
-
+    charClass: character.raceClass,
+    charLevel: character.level,
+    charAlignment: character.alignment,
+    charBackground: character.background,
+    charPersonality: character.personality,
+    charInventory: character.inventory
+},
+{
+    timestamps:false,
+    freezeTableName: true
 }).then((results)=>{
     res.json(results);
 })
