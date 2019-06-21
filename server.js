@@ -6,8 +6,8 @@ var path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-var routes = require('./controllers/characters_controller.js');
-app.use(routes);
+require("./controllers/characters_controller.js")(app);
+require("./controllers/html-routes")(app);
 app.listen(PORT, function(){
     console.log('current port:' + PORT);
 })

@@ -53,10 +53,10 @@ function rollScrubber() {
 }
 function showDie() {
     console.log('die being shown');
-    $("#dicePic").attr("src", "./images/moving_d20.gif");
+    $("#dicePic").attr("src", "./../images/moving_d20.gif");
     setTimeout(stillDie, 1000);
 }
 function stillDie() {
-    $("#dicePic").attr("src", "./images/d20_still_2.png");
+    $("#dicePic").attr("src", "./../images/d20_still_2.png");
 }
 //end of dice rolling code

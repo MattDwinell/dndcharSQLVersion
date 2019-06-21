@@ -1,5 +1,6 @@
 //character constructor
 const CharConst = function(str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment, charBackground,charPersonality, charInventory){
+    this.userEmail = 'test@gmail.com';
     this.str= str;
     this.dex= dex;
     this.con = con;
@@ -47,27 +48,12 @@ function makeChar(){
     
     var tempChar = new CharConst(str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment,charBackground,charPersonality,charInventory);
     console.log(tempChar);
-    
-     console.log(currentUser.uid);
-    
-    database.ref('users/' + currentUser.uid + '/' + charName ).push({
-        str: str,
-        dex: dex,
-        con: con,
-        int: int,
-        wis: wis,
-        cha: cha,
-        ac: ac,
-        spd: spd,
-        hp: hp,
-        init: init,
-        charName: charName,
-        charClass: charClass,
-        charLevel: charLevel,
-        charAlignment: charAlignment,
-        charBackground: charBackground,
-        charPersonality: charPersonality,
-        charInventory: charInventory
+    $.post('/api/characters', tempChar, (data, status)=>{
+        console.log(status);
+        console.log('data from post: ' + data);
+
     })
+
+
     }
 }

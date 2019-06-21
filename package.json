@@ -1,0 +1,28 @@
+{
+  "name": "dndcharsqlversion",
+  "version": "1.0.0",
+  "description": "fullstack dnd char generator and saver",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.6.5",
+    "path-to-regexp": "^0.1.7",
+    "sequelize": "^5.8.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattDwinell/dndcharSQLVersion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattDwinell/dndcharSQLVersion/issues"
+  },
+  "homepage": "https://github.com/MattDwinell/dndcharSQLVersion#readme"
+}

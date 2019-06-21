@@ -11,5 +11,13 @@
     $("#dice").on("click", genDice);
     function genDice() {
         console.log('this working');
+        console.log(window.location.href);
+        var route = window.location.href;
+        var rootRoute =route.includes('index');
+        if (!rootRoute){
+            console.log('this working')
+            window.location.href = './assets/html/dice.html'
+        } else {
         window.location.href = "./dice.html";
+        }
     }

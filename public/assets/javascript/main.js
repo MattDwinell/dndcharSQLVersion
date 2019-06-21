@@ -22,8 +22,6 @@ $(document).ready(function () {
     //when stuff is added or taken away from the system for the user:
     database.ref().on("value", function (snap) {
         console.log(snap.val());
-        var path = snap.val().users.currentUser.uid;
-        console.log(path);
     })
     //firebase authentication stuff:
     $("#sign-in").on("click", function (event) {

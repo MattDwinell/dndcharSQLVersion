@@ -7,6 +7,7 @@ module.exports = function(app){
         })
     })
 app.post("/api/characters", (req,res)=>{
+    console.log(JSON.stringify(req.body));
     let character = req.body;
 Characters.create({
     userEmail: 'testemail@gmail.com',
@@ -28,6 +29,8 @@ Characters.create({
     charPersonality: character.charPersonality,
     charInventory: character.charInventory
 
+}).then((results)=>{
+    res.json(results);
 })
 })
 
