@@ -32,8 +32,14 @@ body{
     text-align:center;
     font-size: 25px;
     border: 1px solid #009688;
+    display: inline-block;
+    max-width: 30%;
+    min-width: 30%;
+    margin: 5px 5px;
+    padding: 5px;
+    
 }
-#submit-char, .return, .sign-out :hover{
+#submit-char, .character, .return, .sign-out :hover{
     cursor: pointer;
 }
 .stats-attr{
