@@ -1,0 +1,47 @@
+.return{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin:10px;
+    padding: 10px;
+    float:right;
+    border: 2px solid blue;
+    border-radius: 2px;
+}
+#viewer-welcome{
+    
+        text-align: center;
+        opacity: .6;
+        color:white;
+        font-size: 20px;
+        font-weight: bolder;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid teal;
+        border-radius: 3px;
+    
+}
+body{
+    background-image: url('../images/fantasy_background_5.jpg');
+    background-size: cover;
+    box-sizing: border-box;
+}
+.character{
+    color:white;
+    opacity: .65;
+    text-align:center;
+    font-size: 25px;
+    border: 1px solid #009688;
+}
+#submit-char, .return, .sign-out :hover{
+    cursor: pointer;
+}
+.stats-attr{
+    margin: 0 5px;
+    color:white;
+    opacity: .75;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid #009688;
+
+}

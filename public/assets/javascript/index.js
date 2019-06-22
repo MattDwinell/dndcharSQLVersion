@@ -2,6 +2,14 @@
     $("#char-view").on("click", viewChar);
     function viewChar() {
         console.log('this working');
+        var route= window.location.href;
+        var rootRoute =route.includes('index');
+        if(!rootRoute){
+            console.log('root route ');
+            window.location.href='./assets/html/viewer.html'
+        } else {
+            window.location.href='./viewer.html';
+        }
     }
     $("#char-create").on("click", makeCharPage);
     function makeCharPage() {
