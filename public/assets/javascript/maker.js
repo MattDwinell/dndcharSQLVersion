@@ -47,6 +47,23 @@ function makeChar(){
     // dex, con, int, wis, cha, ac, spd, hp, init, charName, charLevel (add to if statement when done testing)
     if(str){
         console.log(userEmail);
+         $('#str').val('')
+         $('#dex').val('')
+         $('#con').val('')
+         $('#int').val('')
+         $('#wis').val('')
+         $('#cha').val('')
+        $('#ac').val('')
+        $("#spd").val('')
+        $('#max-hp').val('')
+        $('#init').val('')
+        $("#char-name").val('')
+        $("#char-class").val('')
+        $("#char-level").val('')
+        $("#char-alignment").val('')
+        $("#char-background").val('')
+        $("#char-personality").val('')
+        $("#char-inventory").val('')
     
     var tempChar = new CharConst(userEmail, str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment,charBackground,charPersonality,charInventory);
     console.log(tempChar);
