@@ -32,6 +32,7 @@ body{
     text-align:center;
     font-size: 25px;
     border: 1px solid #009688;
+    border-radius: 2px;
     display: inline-block;
     max-width: 30%;
     min-width: 30%;
@@ -39,13 +40,24 @@ body{
     padding: 5px;
     
 }
-#submit-char, .character, .return, .sign-out :hover{
+#submit-char, #delete, #edit, .character, .return, .sign-out :hover{
     cursor: pointer;
 }
 .stats-attr{
     margin: 0 5px;
     color:white;
     opacity: .75;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid #009688;
+    border-radius: 2px;
+
+}
+#delete, #edit{
+    visibility: hidden;
+    margin: 0 5px;
+    color:white;
+    opacity: .80;
     text-align:left;
     font-size: 20px;
     border: 1px solid #009688;

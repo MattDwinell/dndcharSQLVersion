@@ -56,4 +56,15 @@ module.exports = function (app) {
             })
     })
 
+    app.delete("/api/characters/:id", (req, res)=> {
+        Characters.destroy({
+          where: {
+            id: req.params.id
+          }
+        })
+          .then(function(dbPost) {
+            res.json(dbPost);
+          });
+      });
+
 }

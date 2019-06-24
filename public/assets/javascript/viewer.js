@@ -1,11 +1,15 @@
 $(document).ready(()=>{
-console.log('inside ready function');
 charactersCall();
-
+let selectedChar = {
+    name: "",
+    id: "",
+    warned: false
+}
 
 //time to call some data from the database, wrap it inside a function and run the function at the start to populate our character options. everything else will be on click events for character classes using 'this' to pass in to the sql search.
 function charactersCall(){
    $.get("/api/characters", (data)=>{
+       $("#character-buttons").empty();
        let characters = data;
        for (let i=0; i<data.length; i++){
            let name = data[i].charName;
@@ -17,13 +21,40 @@ function charactersCall(){
        console.log(characters);
 })
 }
-
+//on click events
 $(document).on("click", ".character", findCharacter);
+$("#delete").on("click", deleteChar);
+
+function deleteChar(){
+    if (selectedChar.warned){
+    console.log(selectedChar)
+    
+        $.ajax({
+          method: "DELETE",
+          url: "/api/characters/" + selectedChar.id
+        })
+          .then(charactersCall);
+      } else {
+          selectedChar.warned = true;
+          alert("Are you sure? pressing delete again will delete " + selectedChar.name + " forever.");
+      }
+    }
+
+
+//calling the server and populating the corresponding divs with character stats, also setting that character as the selected character
 function findCharacter(){
+    $(".character").css("border", "1px solid #009688" );
+    $(this).css("border", "5px solid blue");
+    $("#delete").css("visibility", "visible");
+    $("#edit").css("visibility", "visible");
     let queryTerm = $(this).attr("char-id");
     $.get("/api/characters/" + queryTerm, (data)=>{
+  
         console.log(data);
         let {strength, dexterity, constitution, intelligence, wisdom, charisma, armor_class, speed, hitpoints, initiative, charClass, charLevel,charAlignment, charBackground, charPersonality, charInventory, charName} = data[0];
+        selectedChar.name = charName;
+        selectedChar.id  = data[0].id;
+        selectedChar.warned = false;
         let str = $("<span>").text(strength).addClass("cyan darken-4");
         let dex = $("<span>").text(dexterity).addClass("cyan darken-4");
         let con = $("<span>").text(constitution).addClass("cyan darken-4");
