@@ -3,8 +3,13 @@ var Users = require("../models/users.js");
 module.exports = function (app) {
 
     //returns all characters in the characters table
-    app.get("/api/characters", (req, res) => {
-        Characters.findAll().then((result) => {
+    app.get("/api/characters/user/:user", (req, res) => {
+        const {user} = req.params;
+        Characters.findAll({
+            where: {
+                userEmail: user
+            }
+        }).then((result) => {
             return res.json(result);
         })
     })

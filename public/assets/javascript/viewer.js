@@ -1,4 +1,5 @@
 $(document).ready(()=>{
+    
 charactersCall();
 let selectedChar = {
     name: "",
@@ -8,7 +9,14 @@ let selectedChar = {
 
 //time to call some data from the database, wrap it inside a function and run the function at the start to populate our character options. everything else will be on click events for character classes using 'this' to pass in to the sql search.
 function charactersCall(){
-   $.get("/api/characters", (data)=>{
+    let userEmail = $(".userEmail").text();
+    console.log(userEmail + 'test');
+    if(!userEmail){
+        setTimeout(charactersCall, 100);
+    } else {
+   $.get("/api/characters/user/" + userEmail, (data)=>{
+
+
        $("#character-buttons").empty();
        let characters = data;
        for (let i=0; i<data.length; i++){
@@ -19,7 +27,8 @@ function charactersCall(){
            $("#character-buttons").append(tempChar);
        }
        console.log(characters);
-})
+    })
+}
 }
 //on click events
 $(document).on("click", ".character", findCharacter);
@@ -43,6 +52,7 @@ function deleteChar(){
 
 //calling the server and populating the corresponding divs with character stats, also setting that character as the selected character
 function findCharacter(){
+
     $(".character").css("border", "1px solid #009688" );
     $(this).css("border", "5px solid blue");
     $("#delete").css("visibility", "visible");
