@@ -43,7 +43,7 @@ function makeChar(){
     var charBackground = $("#char-background").val();
     var charPersonality = $("#char-personality").val();
     var charInventory = $("#char-inventory").val();
-    var userEmail = $("#userEmail").text();
+    var userEmail = $(".userEmail").text();
     // dex, con, int, wis, cha, ac, spd, hp, init, charName, charLevel (add to if statement when done testing)
     if(str){
         console.log(userEmail);

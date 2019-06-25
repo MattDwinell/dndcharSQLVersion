@@ -40,7 +40,7 @@ body{
     padding: 5px;
     
 }
-#submit-char, #delete, #edit, .character, .return, .sign-out :hover{
+#submit-char, #delete, #edit, #submit, .character, .return, .sign-out :hover{
     cursor: pointer;
 }
 .stats-attr{
@@ -53,7 +53,7 @@ body{
     border-radius: 2px;
 
 }
-#delete, #edit{
+#delete, #edit, #submit{
     visibility: hidden;
     margin: 0 5px;
     color:white;
@@ -66,3 +66,4 @@ body{
 .userEmail{
     display:none;
 }
+

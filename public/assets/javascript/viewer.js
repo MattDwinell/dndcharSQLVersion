@@ -4,7 +4,8 @@ charactersCall();
 let selectedChar = {
     name: "",
     id: "",
-    warned: false
+    warned: false,
+    char: {}
 }
 
 //time to call some data from the database, wrap it inside a function and run the function at the start to populate our character options. everything else will be on click events for character classes using 'this' to pass in to the sql search.
@@ -33,7 +34,13 @@ function charactersCall(){
 //on click events
 $(document).on("click", ".character", findCharacter);
 $("#delete").on("click", deleteChar);
+$("#edit").on("click", editChar);
 
+//editing a current character, needs to pop up a submit button after clicking edit and making those changes.
+function editChar(){
+    $("#submit").css("visibility", "visible");
+}
+//getting rid of a user;s character. double checks that they want to delete the character first.
 function deleteChar(){
     if (selectedChar.warned){
     console.log(selectedChar)
@@ -65,6 +72,26 @@ function findCharacter(){
         selectedChar.name = charName;
         selectedChar.id  = data[0].id;
         selectedChar.warned = false;
+        selectedChar.char = {
+            strength: strength,
+            dexterity: dexterity,
+            constitution: constitution,
+            intelligence: intelligence,
+            wisdom: wisdom,
+            charisma: charisma,
+            armor_class: armor_class,
+            speed: speed,
+            hitpoints: hitpoints,
+            initiative: initiative,
+            charClass: charClass,
+            charLevel: charLevel,
+            charAlignment: charAlignment,
+            charBackground: charBackground,
+            charPersonality: charPersonality,
+            charInventory: charInventory,
+            charName: charName
+        }
+        console.log(selectedChar);
         let str = $("<span>").text(strength).addClass("cyan darken-4");
         let dex = $("<span>").text(dexterity).addClass("cyan darken-4");
         let con = $("<span>").text(constitution).addClass("cyan darken-4");
