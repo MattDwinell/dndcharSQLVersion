@@ -38,6 +38,20 @@ $("#edit").on("click", editChar);
 
 //editing a current character, needs to pop up a submit button after clicking edit and making those changes.
 function editChar(){
+    let str = $("<input>").val(selectedChar.char.strength).addClass("cyan darken-4 input-edit");
+    let dex = $("<input>").val(selectedChar.char.dexterity).addClass("cyan darken-4 input-edit");
+    let con = $("<input>").val(selectedChar.char.constitution).addClass("cyan darken-4 input-edit");
+    let int = $("<input>").val(selectedChar.char.intelligence).addClass("cyan darken-4 input-edit");
+    let wis = $("<input>").val(selectedChar.char.wisdom).addClass("cyan darken-4 input-edit");
+    let cha = $("<input>").val(selectedChar.char.charisma).addClass("cyan darken-4 input-edit");
+
+    console.log(str);
+    $("#char-str").empty().append(str);
+    $("#char-dex").empty().append(dex);
+    $("#char-con").empty().append(con);
+    $("#char-int").empty().append(int);
+    $("#char-wis").empty().append(wis);
+    $("#char-cha").empty().append(cha);
     $("#submit").css("visibility", "visible");
 }
 //getting rid of a user;s character. double checks that they want to delete the character first.
@@ -64,6 +78,7 @@ function findCharacter(){
     $(this).css("border", "5px solid blue");
     $("#delete").css("visibility", "visible");
     $("#edit").css("visibility", "visible");
+    $("#submit").css("visibility", "hidden");
     let queryTerm = $(this).attr("char-id");
     $.get("/api/characters/" + queryTerm, (data)=>{
   
