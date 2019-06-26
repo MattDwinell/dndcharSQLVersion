@@ -94,6 +94,9 @@ function findCharacter(){
             charNotes: notes
         }
         console.log(selectedChar);
+        let proficiency = 2+ Math.floor(parseInt(charLevel)/4);
+      
+        let prof = $("<span>").text("+" + proficiency).addClass("cyan darken-4");
         let str = $("<span>").text(strength).addClass("cyan darken-4");
         let dex = $("<span>").text(dexterity).addClass("cyan darken-4");
         let con = $("<span>").text(constitution).addClass("cyan darken-4");
@@ -134,6 +137,7 @@ function findCharacter(){
         $("#char-name").empty().append(displayName);
         $("#char-notes").empty().append(charNotes);
         $("#char-spells").empty().append(charSpells);
+        $("#char-prof").empty().append(prof);
 
     })
 }
