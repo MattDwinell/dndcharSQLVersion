@@ -51,7 +51,10 @@ module.exports = function (app) {
             charAlignment: character.alignment,
             charBackground: character.background,
             charPersonality: character.personality,
-            charInventory: character.inventory
+            charInventory: character.inventory,
+            spells: character.spells,
+            notes: character.notes
+
         },
             {
                 timestamps: false,

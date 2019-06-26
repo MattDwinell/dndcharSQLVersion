@@ -68,7 +68,7 @@ function findCharacter(){
     $.get("/api/characters/" + queryTerm, (data)=>{
   
         console.log(data);
-        let {strength, dexterity, constitution, intelligence, wisdom, charisma, armor_class, speed, hitpoints, initiative, charClass, charLevel,charAlignment, charBackground, charPersonality, charInventory, charName} = data[0];
+        let {strength, dexterity, constitution, intelligence, wisdom, charisma, armor_class, speed, hitpoints, initiative, charClass, charLevel,charAlignment, charBackground, charPersonality, charInventory, charName, spells, notes} = data[0];
         selectedChar.name = charName;
         selectedChar.id  = data[0].id;
         selectedChar.warned = false;
@@ -89,7 +89,9 @@ function findCharacter(){
             charBackground: charBackground,
             charPersonality: charPersonality,
             charInventory: charInventory,
-            charName: charName
+            charName: charName,
+            charSpells: spells,
+            charNotes: notes
         }
         console.log(selectedChar);
         let str = $("<span>").text(strength).addClass("cyan darken-4");
@@ -109,6 +111,8 @@ function findCharacter(){
         let personality = $("<span>").text(charPersonality).addClass("cyan darken-4");
         let inventory = $("<span>").text(charInventory).addClass("cyan darken-4");
         let displayName = $("<span>").text(charName).addClass("cyan darken-4");
+        let charNotes = $("<span>").text(notes).addClass("cyan darken-4");
+        let charSpells = $("<span>").text(spells).addClass("cyan darken-4");
 
 
         $("#char-str").empty().append(str);
@@ -128,6 +132,8 @@ function findCharacter(){
         $("#char-level").empty().append(level);
         $("#char-alignment").empty().append(alignment);
         $("#char-name").empty().append(displayName);
+        $("#char-notes").empty().append(charNotes);
+        $("#char-spells").empty().append(charSpells);
 
     })
 }

@@ -1,5 +1,5 @@
 //character constructor
-const CharConst = function(userEmail, str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment, charBackground,charPersonality, charInventory){
+const CharConst = function(userEmail, str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment, charBackground,charPersonality, charInventory, charNotes, charSpells){
     this.userEmail = userEmail;
     this.str= str;
     this.dex= dex;
@@ -18,6 +18,8 @@ const CharConst = function(userEmail, str, dex, con, int, wis, cha, ac, spd, hp,
     this.background = charBackground;
     this.personality = charPersonality;
     this.inventory= charInventory;
+    this.notes = charNotes;
+    this.spells = charSpells;
 
 }
 
@@ -43,7 +45,10 @@ function makeChar(){
     var charBackground = $("#char-background").val();
     var charPersonality = $("#char-personality").val();
     var charInventory = $("#char-inventory").val();
+    var charSpells = $("#char-spells").val();
+    var charNotes = $("#char-notes").val();
     var userEmail = $(".userEmail").text();
+    console.log(charNotes, charSpells);
     // dex, con, int, wis, cha, ac, spd, hp, init, charName, charLevel (add to if statement when done testing)
     if(str){
         console.log(userEmail);
@@ -64,8 +69,10 @@ function makeChar(){
         $("#char-background").val('')
         $("#char-personality").val('')
         $("#char-inventory").val('')
+        $("#char-notes").val('')
+        $("#char-spells").val('')
     
-    var tempChar = new CharConst(userEmail, str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment,charBackground,charPersonality,charInventory);
+    var tempChar = new CharConst(userEmail, str, dex, con, int, wis, cha, ac, spd, hp, init, charName, charClass, charLevel, charAlignment,charBackground,charPersonality,charInventory, charNotes, charSpells);
     console.log(tempChar);
     $.post('/api/characters', tempChar, (data, status)=>{
         console.log(status);

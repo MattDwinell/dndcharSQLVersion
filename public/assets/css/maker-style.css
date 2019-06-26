@@ -67,7 +67,7 @@ body{
     border-radius: 3px;
     text-align: center;
 }
-#char-inventory{
+#char-inventory, #char-spells, #char-notes{
     max-height: 24px;
     border: 2px solid rgba(0,0,0,.3);
     border-radius: 3px;

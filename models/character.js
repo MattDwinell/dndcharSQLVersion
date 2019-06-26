@@ -18,7 +18,9 @@ var Character = sequelize.define("characters", {
   charAlignment: Sequelize.STRING,
   charBackground: Sequelize.STRING,
   charPersonality: Sequelize.STRING,
-  charInventory: Sequelize.STRING
+  charInventory: Sequelize.STRING,
+  notes: Sequelize.STRING,
+  spells: Sequelize.STRING
 
 }, {
   freezeTableName: true
