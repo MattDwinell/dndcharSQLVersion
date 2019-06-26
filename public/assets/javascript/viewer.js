@@ -38,14 +38,23 @@ $("#edit").on("click", editChar);
 
 //editing a current character, needs to pop up a submit button after clicking edit and making those changes.
 function editChar(){
-    let str = $("<input>").val(selectedChar.char.strength).addClass("cyan darken-4 input-edit");
-    let dex = $("<input>").val(selectedChar.char.dexterity).addClass("cyan darken-4 input-edit");
-    let con = $("<input>").val(selectedChar.char.constitution).addClass("cyan darken-4 input-edit");
-    let int = $("<input>").val(selectedChar.char.intelligence).addClass("cyan darken-4 input-edit");
-    let wis = $("<input>").val(selectedChar.char.wisdom).addClass("cyan darken-4 input-edit");
-    let cha = $("<input>").val(selectedChar.char.charisma).addClass("cyan darken-4 input-edit");
+    let lvl = $("<input>").val(selectedChar.char.charLevel).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let str = $("<input>").val(selectedChar.char.strength).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let dex = $("<input>").val(selectedChar.char.dexterity).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let con = $("<input>").val(selectedChar.char.constitution).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let int = $("<input>").val(selectedChar.char.intelligence).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let wis = $("<input>").val(selectedChar.char.wisdom).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let cha = $("<input>").val(selectedChar.char.charisma).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let ac = $("<input>").val(selectedChar.char.armor_class).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let spd = $("<input>").val(selectedChar.char.speed).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let hp = $("<input>").val(selectedChar.char.hitpoints).addClass("cyan darken-4 input-edit").attr("type", "number");
+    let init = $("<input>").val(selectedChar.char.initiative).addClass("cyan darken-4 input-edit").attr("type", "number");
 
-    console.log(str);
+    $("#char-ac").empty().append(ac);
+    $("#char-spd").empty().append(spd);
+    $("#char-hp").empty().append(hp);
+    $("#char-init").empty().append(init);
+    $("#char-level").empty().append(lvl);
     $("#char-str").empty().append(str);
     $("#char-dex").empty().append(dex);
     $("#char-con").empty().append(con);
