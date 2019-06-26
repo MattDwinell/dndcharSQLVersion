@@ -97,12 +97,12 @@ function findCharacter(){
         let proficiency = 2+ Math.floor(parseInt(charLevel)/4);
       
         let prof = $("<span>").text("+" + proficiency).addClass("cyan darken-4");
-        let str = $("<span>").text(strength).addClass("cyan darken-4");
-        let dex = $("<span>").text(dexterity).addClass("cyan darken-4");
-        let con = $("<span>").text(constitution).addClass("cyan darken-4");
-        let int = $("<span>").text(intelligence).addClass("cyan darken-4");
-        let wis = $("<span>").text(wisdom).addClass("cyan darken-4");
-        let cha = $("<span>").text(charisma).addClass("cyan darken-4");
+        let str = $("<span>").text(strength + "(" + Math.floor((strength - 10)/2) + ")" ).addClass("cyan darken-4");
+        let dex = $("<span>").text(dexterity+ "(" + Math.floor((dexterity - 10)/2) + ")").addClass("cyan darken-4");
+        let con = $("<span>").text(constitution + "(" + Math.floor((constitution - 10)/2) + ")").addClass("cyan darken-4");
+        let int = $("<span>").text(intelligence + "(" + Math.floor((intelligence - 10)/2) + ")").addClass("cyan darken-4");
+        let wis = $("<span>").text(wisdom + "(" + Math.floor((wisdom - 10)/2) + ")").addClass("cyan darken-4");
+        let cha = $("<span>").text(charisma + "(" + Math.floor((charisma - 10)/2) + ")").addClass("cyan darken-4");
         let ac = $("<span>").text(armor_class).addClass("cyan darken-4");
         let spd = $("<span>").text(speed).addClass("cyan darken-4");
         let hp = $("<span>").text(hitpoints).addClass("cyan darken-4");
