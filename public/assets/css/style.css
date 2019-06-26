@@ -8,7 +8,7 @@
    
 }
 body{
-    background-image: url('../images/fantasy_background_1.jpg');
+    background-image: url('../images/fantasy_background_6.jpg');
     background-size: cover;
     box-sizing: border-box;
 }
@@ -79,4 +79,12 @@ body{
 #char-create, #dice, #char-view, .sign-out :hover{
     cursor: pointer;
 
+}
+.char-sprite{
+    margin-top: 100px;
+    position: relative;
+    
+}
+#right-sprite{
+    margin-left: 50%;
 }
