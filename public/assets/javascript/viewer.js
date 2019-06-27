@@ -118,6 +118,10 @@ $(document).ready(() => {
         })
           .then(function(res) {
             console.log(res);
+            console.log(window.location.href);
+            window.location.href = window.location.href;
+               
+            
           });
       }
     //getting rid of a user's character. double checks that they want to delete the character first.

@@ -80,8 +80,8 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             }
-        }).then((updatedChar)=>{
-            res.json(updatedChar);
+        }).then((success)=>{
+            res.json(success);
 
         })
     })
