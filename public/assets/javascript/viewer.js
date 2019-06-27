@@ -36,7 +36,8 @@ $(document).ready(() => {
     $("#delete").on("click", deleteChar);
     $("#edit").on("click", editChar);
 
-    //editing a current character, needs to pop up a submit button after clicking edit and making those changes.
+    //editing a current character, needs to pop up a submit button after clicking edit and making those changes, and change all displayed text
+    //to input fields which can be submitted when the submit button is clicked.
     function editChar() {
         let lvl = $("<input>").val(selectedChar.char.charLevel).addClass("cyan darken-4 input-edit").attr("type", "number");
         let str = $("<input>").val(selectedChar.char.strength).addClass("cyan darken-4 input-edit").attr("type", "number");
@@ -79,7 +80,47 @@ $(document).ready(() => {
         $("#char-cha").empty().append(cha);
         $("#submit").css("visibility", "visible");
     }
-    //getting rid of a user;s character. double checks that they want to delete the character first.
+
+    $("#submit").on("click", updateChar);
+
+
+
+    function updateChar() {
+        selectedChar.char = {
+            userEmail: $(".userEmail").text(),
+            charName: $("#char-name > input").val(),
+            strength: $("#char-str > input").val(),
+            dexterity: $("#char-dex > input").val(),
+            constitution: $("#char-con > input").val(),
+            intelligence: $("#char-int > input").val(),
+            wisdom: $("#char-wis > input").val(),
+            charisma: $("#char-cha > input").val(),
+            armor_class: $("#char-ac > input").val(),
+            speed: $("#char-spd > input").val(),
+            hitpoints: $("#char-hp > input").val(),
+            initiative: $("#char-init > input").val(),
+            charClass: $("#char-race > input").val(),
+            charLevel: $("#char-level > input").val(),
+            charAlignment: $("#char-alignment > input").val(),
+            charBackground: $("#char-background > input").val(),
+            charPersonality: $("#char-personality > input").val(),
+            charInventory: $("#char-inventory > input").val(),
+            spells: $("#char-spells > input").val(),
+            notes: $("#char-notes > input").val()
+
+        }
+        console.log(selectedChar.char);
+        console.log(selectedChar.id);
+        $.ajax({
+          method: "PUT",
+          url: "/api/characters/" + selectedChar.id,
+          data: selectedChar.char
+        })
+          .then(function(res) {
+            console.log(res);
+          });
+      }
+    //getting rid of a user's character. double checks that they want to delete the character first.
     function deleteChar() {
         if (selectedChar.warned) {
             console.log(selectedChar)

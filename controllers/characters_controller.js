@@ -75,4 +75,15 @@ module.exports = function (app) {
           });
       });
 
+    app.put("/api/characters/:id", (req, res)=>{
+        Characters.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        }).then((updatedChar)=>{
+            res.json(updatedChar);
+
+        })
+    })
+
 }
