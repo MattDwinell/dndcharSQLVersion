@@ -80,6 +80,9 @@ function makeChar(){
         console.log(data);
         console.log( data.charName);
 
+    }).then(()=>{
+        alert('character succesfully created!');
+
     })
 
 
