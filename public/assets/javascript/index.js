@@ -14,7 +14,13 @@
     $("#char-create").on("click", makeCharPage);
     function makeCharPage() {
         console.log('this working');
+        var route = window.location.href;
+        var rootRoute = route.includes('index');
+        if (!rootRoute){
+            window.location.href = './assets/html/maker.html';
+        } else {
         window.location.href = "./maker.html";
+        }
     }
     $("#dice").on("click", genDice);
     function genDice() {
