@@ -1,8 +1,11 @@
 
 var Sequelize = require("sequelize");
-
-var sequelize = new Sequelize("dndchars_db", "root", "25064c001023818v", {
-  host: "localhost",
+const jawsdb = process.env.JAWSDB_URL;
+const jawsUsername = process.env.jawsUsername;
+const jawsPassword = process.env.password;
+const jawsDBName = "j9sfrsa6x00mtqvh";
+var sequelize = new Sequelize(jawsDBName, jawsUsername, jawsPassword, {
+  host: jawsdb,
   port: 3306,
   dialect: "mysql",
   pool: {
