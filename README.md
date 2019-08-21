@@ -8,5 +8,5 @@ to create a character, visit the character creator screen, input the appropriate
 ![character creator](/public/assets/images/dnd_creator_page.png)
 to view your created character, go to the character viewer and select which of your characters to view. once selected,
 you can edit or delete that character as you see fit.
-![viewer](/public/assets/images/dnd_char_viewer.png)
+![viewer](/public/assets/images/dnd_char_viewer2.png)
 any questions, comments, or concerns should be addressed to the owner, Matthew Dwinell.
